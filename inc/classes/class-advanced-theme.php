@@ -16,6 +16,7 @@ class ADVANCED_THEME
     {
         // load class.
         Assets::get_instance();
+        Menus::get_instance();
         $this->setup_hooks();
     }
     protected function setup_hooks()
@@ -36,5 +37,18 @@ class ADVANCED_THEME
             'default_color' => '#fff',
             'default_image' => '',
         ]);
+        add_theme_support('post_thumbnails');
+        add_theme_support('customize-selective-refresh-widgets');
+        add_theme_support('automatic-feed-links');
+        add_theme_support('hmtl5', [
+            'search-form',
+            'comment-form',
+            'gallery',
+            'caption',
+            'script',
+            'style'
+        ]);
+        add_theme_support('wp-block-styles');
+        add_theme_support('align-wide');
     }
 }
